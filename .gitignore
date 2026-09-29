@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# Environment files – never commit real secrets
+.env
+!.env.example
+!backend/.env.example
+!ai-service/.env.example
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Uploads
+backend/uploads/
+
+# Python model files
+ai-service/models/*.pkl
+ai-service/data/*.csv
+
+# PostgreSQL user cluster (local dev only)
+campuspulse_pgdata/
+campuspulse_pg.log
+
+# Docker volumes
+postgres_data/
+
+# npm install log
+npm-install.log
