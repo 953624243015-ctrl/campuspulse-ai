@@ -1,4 +1,4 @@
-# Dependencies
+# ─── Dependencies ────────────────────────────────────────────
 node_modules/
 __pycache__/
 *.pyc
@@ -6,44 +6,47 @@ __pycache__/
 .venv/
 venv/
 
-# Build outputs
-dist/
+# ─── Build outputs (keep dist/ for backend – needed to run without compiling) ─
+# dist/        <-- intentionally NOT ignored so backend runs from GitHub clone
 build/
 *.egg-info/
 
-# Environment files – never commit real secrets
+# ─── Environment files (never commit real secrets) ───────────
 .env
+# Keep example files
 !.env.example
 !backend/.env.example
 !ai-service/.env.example
+!frontend/.env.example
 
-# Logs
+# ─── Logs ────────────────────────────────────────────────────
 *.log
 logs/
 npm-debug.log*
+npm-install.log
 
-# OS
+# ─── OS ──────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
 
-# IDE
+# ─── IDE ─────────────────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
 
-# Uploads
+# ─── Uploads ─────────────────────────────────────────────────
 backend/uploads/
 
-# Python model files
+# ─── Python model/data files ─────────────────────────────────
 ai-service/models/*.pkl
 ai-service/data/*.csv
 
-# PostgreSQL user cluster (local dev only)
+# ─── Local PostgreSQL cluster (dev only) ─────────────────────
 campuspulse_pgdata/
 campuspulse_pg.log
 
-# Docker volumes
+# ─── Docker volumes ──────────────────────────────────────────
 postgres_data/
 
-# npm install log
-npm-install.log
+# ─── Local frontend copy (dev workaround for network drive) ──
+campuspulse_frontend/
