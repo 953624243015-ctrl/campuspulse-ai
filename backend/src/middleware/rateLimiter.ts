@@ -13,10 +13,11 @@ export const globalRateLimiter = rateLimit({
 
 export const authRateLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 min
-  max: 10,
+  max: 50, // raised to 50 – covers demo testing across all roles
+  skipSuccessfulRequests: true, // only count failed attempts
   message: {
     success: false,
-    error: 'Too many authentication attempts. Please wait 15 minutes.',
+    error: 'Too many failed login attempts. Please wait 15 minutes.',
   },
 });
 
